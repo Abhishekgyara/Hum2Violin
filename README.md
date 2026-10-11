@@ -174,3 +174,4 @@ Keep both backend and frontend terminals running while using the application.
 ## Conclusion
 
 HUM2VIOLIN demonstrates how audio processing, pitch detection, MIDI generation, and instrument synthesis can work together to turn a human-hummed melody into a violin rendition.
+![alt text](mermaid-diagram.png)
