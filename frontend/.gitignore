@@ -1,0 +1,21 @@
+# Python virtual environments
+venv/
+.venv/
+backend/venv/
+backend/.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Generated audio
+backend/outputs/*
+
+# Frontend dependencies
+frontend/node_modules/
+frontend/dist/
+
+# Secrets
+.env
+.env.*
+!.env.example
