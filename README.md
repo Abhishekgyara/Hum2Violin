@@ -1,6 +1,6 @@
 # HUM2VIOLIN 🎻
 
-**HUM2VIOLIN** is a simple application that converts a humming recording into a violin rendition of the melody.
+HUM2VIOLIN is a simple application that converts a humming recording into a violin rendition of the melody.
 
 Users upload a WAV audio file, and the application detects the musical notes in the humming and recreates them using a violin sound.
 
@@ -17,7 +17,7 @@ Users upload a WAV audio file, and the application detects the musical notes in 
 The application follows these steps:
 
 1. **Audio Input:** The user uploads a WAV recording of humming.
-2. **Pitch Detection:** Librosa and pYIN analyze the recording to estimate the pitches and timings.
+2. **Pitch Detection:** Librosa and pYIN analyze the recording to estimate pitches and timings.
 3. **Note Processing:** The detected notes are smoothed and organized into a sequence.
 4. **MIDI Generation:** Pretty MIDI converts the note sequence into MIDI instructions.
 5. **Violin Synthesis:** FluidSynth uses the MIDI instructions and a violin SoundFont to generate audio.
@@ -35,7 +35,7 @@ The application follows these steps:
 - **pYIN** – Fundamental frequency estimation
 - **Pretty MIDI** – MIDI note generation
 - **FluidSynth** – Instrument sound synthesis
-- **SoundFont (.sf2)** – Provides violin instrument sounds
+- **SoundFont (.sf2)** – Provides instrument sounds
 - **React** – Frontend interface
 - **Vite** – Frontend development server
 
@@ -47,14 +47,19 @@ Hum2Violin/
 │   ├── main.py
 │   ├── soundfonts/
 │   │   └── violin.sf2
-│   └── outputs/
-└── frontend/
-    ├── src/
-    │   ├── App.jsx
-    │   └── App.css
-    ├── package.json
-    └── index.html
+│   ├── outputs/
+│   └── requirements.txt
+├── frontend/
+│   ├── src/
+│   │   ├── App.jsx
+│   │   └── App.css
+│   ├── package.json
+│   └── index.html
+├── .gitignore
+└── README.md
 ```
+
+*Note: The structure above is illustrative. Include only files and folders that actually exist in your repository.*
 
 ## Requirements
 
@@ -69,11 +74,13 @@ Install the following before running the application:
 
 ### 1. Open a terminal
 
-Navigate to the backend directory:
+Navigate to the `backend` directory inside the project folder:
 
 ```powershell
-cd "C:\Users\Abhishek Bhan\Downloads\Hum2Violin\backend"
+cd "path-to-project\backend"
 ```
+
+Replace `path-to-project` with the location of your cloned or downloaded project.
 
 ### 2. Install Python dependencies
 
@@ -91,15 +98,15 @@ python -m pip install fastapi "uvicorn[standard]" python-multipart librosa numpy
 
 ### 3. Configure FluidSynth and the SoundFont
 
-Set the paths to the FluidSynth executable and violin SoundFont. Update these paths if you installed them elsewhere.
+Set the paths to the FluidSynth executable and the violin SoundFont. Update these paths according to your installation.
 
 ```powershell
-$env:VIOLIN_SOUNDFONT = "C:\Users\Abhishek Bhan\Downloads\Hum2Violin\backend\soundfonts\violin.sf2"
+$env:VIOLIN_SOUNDFONT = "path-to-project\backend\soundfonts\violin.sf2"
 
-$env:FLUIDSYNTH_PATH = "C:\Users\Abhishek Bhan\Downloads\fluidsynth-v2.6.1-win10-x64-cpp11\bin\fluidsynth.exe"
+$env:FLUIDSYNTH_PATH = "path-to-fluidsynth\bin\fluidsynth.exe"
 ```
 
-Make sure both files exist.
+Replace the example paths with the actual locations on your computer. Make sure both files exist.
 
 ### 4. Start the backend server
 
@@ -109,20 +116,17 @@ python -m uvicorn main:app --reload --port 8000
 
 The backend will run at:
 
-http://127.0.0.1:8000
+- Application: http://127.0.0.1:8000
+- API documentation: http://127.0.0.1:8000/docs
 
-API documentation is available at:
-
-http://127.0.0.1:8000/docs
-
-You can use the `/convert` endpoint in the API documentation to upload a WAV file and test the conversion.
+Use the `/convert` endpoint in the API documentation to upload a WAV file and test the conversion.
 
 ## How to Run the Frontend
 
-Open a **second terminal** and navigate to the frontend directory:
+Open a **second terminal** and navigate to the `frontend` directory inside the project folder:
 
 ```powershell
-cd "C:\Users\Abhishek Bhan\Downloads\Hum2Violin\frontend"
+cd "path-to-project\frontend"
 ```
 
 Install the frontend dependencies:
@@ -161,9 +165,11 @@ Keep both backend and frontend terminals running while using the application.
 ## Future Enhancements
 
 - Support additional audio formats.
-- Add selectable musical keys and Major/Minor scale options.
+- Add selectable musical keys and major/minor scale options.
 - Improve pitch detection and note timing.
 - Add more instrument sounds and musical customization options.
+- Introduce a visual melody editor and MIDI export.
+- Explore AI-based melody continuation and accompaniment generation.
 
 ## Conclusion
 
